@@ -7,9 +7,10 @@
 using namespace std;
  
 int main() {
-    double a1;
-    scanf("%lf",&a1);
-    double b =a1*a1*3.14159;
-    printf("A=%.4lf\n",b);
+    int a1,a2;
+    scanf("%d",&a1);
+    scanf("%d",&a2);
+
+    printf("PROD = %d\n",a1*a2);
     return 0;
 }
