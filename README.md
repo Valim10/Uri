@@ -1,2 +1,2 @@
 # Uri
-Problems and solutions in Java, C and C++ 
+Problems and solutions in SQL, Java, C and C++ 
