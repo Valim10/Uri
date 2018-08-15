@@ -11,7 +11,8 @@ c=float(c)
 d=float(d)
 e=float(e)
 f=float(f)
-positivo =0
+x= positivo =0
+
 if( a > 0 ):
     positivo+=1
     x +=a
@@ -23,8 +24,12 @@ if( c > 0 ):
     x +=c
 if( d > 0 ):
     positivo+=1
+    x +=d
 if( e > 0 ):
     positivo+=1
+    x +=e
 if( f > 0 ):
     positivo+=1
+    x +=f
 print positivo, "valores positivos"
+print "%.1f"%(x/positivo)
