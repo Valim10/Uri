@@ -15,7 +15,7 @@ while 1 :
     for i in lista:
         print i,
         soma = soma + i
-    a = "SUM="+str(soma)
+    a = "Sum="+str(soma)
     
     print a    
     
