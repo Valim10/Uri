@@ -12,7 +12,8 @@ while x < 2 :
     if x==2:
         print("media = %.2f" % round(float(media/2),2))
         while 1 :
-            sair = input("novo calculo (1-sim 2-nao)")
+            print "novo calculo (1-sim 2-nao)"
+            sair = input()
             if sair == 1:
                 media = 0
                 x = 0
