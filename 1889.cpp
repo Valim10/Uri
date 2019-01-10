@@ -61,7 +61,8 @@ void solve() {
 }
 
 int main() {
-  int t; cin >> t;
+  int t;
+  cin >> t;
   cout << fixed << setprecision(2);
   while (t--) {
     solve();

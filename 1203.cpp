@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-#define debug(x) cout << #x " = " << (x) << endl
-#define endl '\n'
 
 using namespace std;
 
@@ -10,7 +8,8 @@ const int MN = 111;
 bool dp[MN][MN * (MN - 1) / 2];
 
 int main() {
-  ios_base::sync_with_stdio(false);cin.tie(NULL);
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
   int n, m;
   while (cin >> n >> m) {
     K = m;
@@ -18,7 +17,8 @@ int main() {
     int u, v;
     for (int i = 0; i < m; ++i) {
       cin >> u >> v;
-      u--;v--;
+      u--;
+      v--;
       d[u]++;
       d[v]++;
     }
