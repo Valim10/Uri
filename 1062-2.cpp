@@ -1,88 +1,56 @@
-#include<stdio.h>
-#include<string>
-#include<map>
-#include<vector>
-#include<queue>
+#include<stdlib.h>
 #include<stack>
+#include<stdio.h>
 
 using namespace std;
 
-int main (){
-	
-	int flag  = -1;
-	while(1){
-	 int quant_vagoes = 0;	
-	 scanf("%d",&quant_vagoes);
-	 if(!quant_vagoes) break;
-	 //stack <int> inicio,meio,fim;
-	 
-	 
-	 int entrada = 1;
-	 while(1){
-	 		stack <int> inicio2;
-
-     		 for(int i = 0 ; i < quant_vagoes ; i++){
-			 	inicio2.push(i+1);
-			 }		
-
-	 		stack <int> meio2 ;
-	 		stack <int> fim2 ;
-	 		int v[quant_vagoes];
-	 		for(int i = 0 ; i < quant_vagoes; i++){
-	 			scanf("%d",&v[i]);
-				printf("li");
-
-	 			if( v[i] == 0){
-					//printf("\n");
-					break;
-		 		}	 
-			}
-			if (v[0] == 0) {
-				printf("\n");
-				//printf("achei zero");
-				break;
-			}	
-		 		
-			int b = 0;
-			while(b<quant_vagoes){
-							printf("passei aqui \n");
-
-					if (v[b] == inicio2.top()){
-						inicio2.pop();
-				 		fim2.push(v[b]) ;
-				 		b++;
-					}else{
-						if (v[b] == meio2.top()){
-							meio2.pop();
-					 		fim2.push(v[b]);
-					 		b++;
-						}else{
-							while(v[b] !=  inicio2.top() && !inicio2.empty()){
-						   		int a = inicio2.top();
-						   		inicio2.pop();
-						   		meio2.push(a);
-							}
-							if( v[b] == inicio2.top()){
-								fim2.push(inicio2.top());
-								inicio2.pop();
-								b++;
-							}
-
-						}
-
-						
-					}
-				
-			}		
-			//printf("passei aqui \n");
-			if( fim2.size() == quant_vagoes)
-				printf("Yes\n");
-			else
-				printf("No\n");
- 
-	 	}
-			
-
-	}
- return 0;
-}
+int main(){
+    int n,i,j, flag, flag1,flag2;
+    int nums[1001];
+     
+    while(1){
+         scanf("%d",&n);
+         if(n == 0)
+            break;
+         while(1){
+            j = 1;
+            flag = 0;
+            flag1 = 0;
+            stack<int> pilha;
+            for(i = 1; i <= n; i++){
+                scanf("%d",&nums[i]);
+                if(nums[i] == 0){
+                      flag = 1;
+                      printf("\n");
+                      break;
+                }
+             }
+             i = 1;
+             while(1){
+                   if(i > n || flag1 == 1 || flag == 1) break;
+                   while(1){
+                            if(!pilha.empty() && pilha.top() == nums[i]){
+                                            pilha.pop();
+                                            break;
+                            }else if(j <= n){
+                                  pilha.push(j);
+                                  j++;
+                                  if(pilha.top() == nums[i]){
+                                            pilha.pop();
+                                            break;
+                                  }
+                             }else{
+                                   flag1 = 1;
+                                   break;
+                             }
+                   }
+                   i++;
+                    
+             }
+             if(flag == 1) break;
+             if(pilha.empty()) printf("Yes\n");
+             else  printf("No\n");
+             }
+    }
+    return 0;
+} 
